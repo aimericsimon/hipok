@@ -1,0 +1,88 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "medicalTypeRef",
+      "relationshipFieldName": "medicalTypeRef",
+      "otherEntityName": "medicalTypeRef",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "rppsRef",
+      "relationshipFieldName": "rppsRef",
+      "otherEntityName": "rppsRef",
+      "relationshipType": "one-to-one",
+      "ownerSide": true,
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "extendedUser"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "user",
+      "relationshipFieldName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "one-to-one",
+      "ownerSide": true,
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "extendedUser"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "address",
+      "relationshipFieldName": "address",
+      "otherEntityName": "address",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "titleRef",
+      "relationshipFieldName": "titleRef",
+      "otherEntityName": "titleRef",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "label"
+    },
+    {
+      "relationshipId": 6,
+      "relationshipName": "situationRef",
+      "relationshipFieldName": "situationRef",
+      "otherEntityName": "situationRef",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "birthDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "sex",
+      "fieldType": "Sex",
+      "fieldValues": "M,F"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "practiceLocation",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "adeliNumber",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "fieldsContainLocalDate": true,
+  "fieldsContainCustomTime": true
+}

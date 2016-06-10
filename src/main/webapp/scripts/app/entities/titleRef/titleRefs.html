@@ -1,0 +1,52 @@
+<div>
+    <h2>TitleRefs</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="titleRef.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new TitleRef</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Label</th>
+                    <th>Abbreviation</th>
+                    <th>Code</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="titleRef in titleRefs track by titleRef.id">
+                    <td><a ui-sref="titleRef.detail({id:titleRef.id})">{{titleRef.id}}</a></td>
+                    <td>{{titleRef.label}}</td>
+                    <td>{{titleRef.abbreviation}}</td>
+                    <td>{{titleRef.code}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="titleRef.detail({id:titleRef.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="titleRef.edit({id:titleRef.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="titleRef.delete({id:titleRef.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

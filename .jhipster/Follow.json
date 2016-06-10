@@ -1,0 +1,38 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "follower",
+      "relationshipFieldName": "follower",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "description"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "following",
+      "relationshipFieldName": "following",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "description"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "state",
+      "fieldType": "State",
+        "fieldValues": "PENDING,ACCEPTED"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "date",
+      "fieldType": "DateTime"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "no",
+  "pagination": "no",
+  "fieldsContainDateTime": true,
+  "fieldsContainCustomTime": true
+}

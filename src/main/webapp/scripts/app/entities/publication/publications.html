@@ -1,0 +1,83 @@
+<div>
+    <h2>Publications</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="publication.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new Publication
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="location"><span>Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="visibility"><span>Visibility</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="publicationDate"><span>PublicationDate</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nbVizualisations"><span>NbVizualisations</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="processedDescription"><span>ProcessedDescription</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="authorProfileDescription"><span>authorProfile</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="anatomicZoneRefLabel"><span>anatomicZoneRef</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="specialtyRefLabel"><span>specialtyRef</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="imageId"><span>image</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="publication in publications track by publication.id">
+                    <td><a ui-sref="publication.detail({id:publication.id})">{{publication.id}}</a></td>
+                    <td>{{publication.description}}</td>
+                    <td>{{publication.location}}</td>
+                    <td translate="{{'hipokApp.Visibility.' + publication.visibility}}">{{publication.visibility}}</td>
+                    <td>{{publication.publicationDate | date:'medium'}}</td>
+                    <td>{{publication.nbVizualisations}}</td>
+                    <td>{{publication.processedDescription}}</td>
+                    <td>
+                        <a ui-sref="profile.detail({id:publication.authorProfileId})">{{publication.authorProfileDescription}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="anatomicZoneRef.detail({id:publication.anatomicZoneRefId})">{{publication.anatomicZoneRefLabel}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="specialtyRef.detail({id:publication.specialtyRefId})">{{publication.specialtyRefLabel}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="image.detail({id:publication.imageId})">{{publication.imageId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="publication.detail({id:publication.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="publication.edit({id:publication.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="publication.delete({id:publication.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <uib-pager total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pager>
+</div>

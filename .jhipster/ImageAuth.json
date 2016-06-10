@@ -1,0 +1,18 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "imageAuth_url",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageAuth_thumbnail_url",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160610090519",
+    "dto": "mapstruct",
+    "service": "no",
+    "entityTableName": "image_auth",
+    "pagination": "no"
+}

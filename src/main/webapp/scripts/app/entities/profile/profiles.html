@@ -1,0 +1,64 @@
+<div>
+    <h2>Profiles</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="profile.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                       >Create new Profile
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>AvatarUrl</span></th>
+                    <th><span>Description</span></th>
+                    <th><span>AvatarThumbnailUrl</span></th>
+                    <th><span>extendedUser</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="profile in profiles track by profile.id">
+                    <td><a ui-sref="profile.detail({id:profile.id})">{{profile.id}}</a></td>
+                    <td>{{profile.avatarUrl}}</td>
+                    <td>{{profile.description}}</td>
+                    <td>{{profile.avatarThumbnailUrl}}</td>
+                    <td>
+                        <a ui-sref="extendedUser.detail({id:profile.extendedUserId})">{{profile.extendedUserId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="profile.detail({id:profile.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="profile.edit({id:profile.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="profile.delete({id:profile.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

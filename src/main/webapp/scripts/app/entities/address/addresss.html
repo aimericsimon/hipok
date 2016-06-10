@@ -1,0 +1,52 @@
+<div>
+    <h2>Addresss</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="address.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new Address</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Label</th>
+                    <th>PostalCode</th>
+                    <th>City</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="address in addresss track by address.id">
+                    <td><a ui-sref="address.detail({id:address.id})">{{address.id}}</a></td>
+                    <td>{{address.label}}</td>
+                    <td>{{address.postalCode}}</td>
+                    <td>{{address.city}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="address.detail({id:address.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="address.edit({id:address.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="address.delete({id:address.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

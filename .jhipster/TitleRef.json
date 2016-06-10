@@ -1,0 +1,32 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "extendedUser",
+      "relationshipFieldName": "extendedUser",
+      "otherEntityName": "extendedUser",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "titleRef"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "label",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "abbreviation",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "code",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "no",
+  "pagination": "no"
+}

@@ -1,0 +1,5 @@
+id;login;password_hash;first_name;last_name;email;activated;lang_key;created_by;created_date
+5;barack@gmail.com;$2a$10$QYFY0DDJ1L.yOTCGHE2IF.SNBKTg/5SYwct47Yty6BxPl96hjHbzG;Barack;Obama;barack@gmail.com;TRUE;fr;admin;2015-12-03 09:52:45.364451
+6;steven@gmail.com;$2a$10$N39laGf1UaAu01aYbq2RI.tuzsICixgbkn70l0zqP7MxoAKlEI9ge;Steven;Spielberg;steven@gmail.com;TRUE;fr;admin;2015-12-03 09:52:45.364451
+7;roger@gmail.com;$2a$10$9Z7S.mzjqawalZRxV2A9Q.FEMAj1sdL5CE47Jqxu0hrWleFJCWgm.;Roger;Dupont;roger@gmail.com;TRUE;fr;admin;2015-12-03 09:52:45.364451
+8;kevin@gmail.com;$2a$10$HygMnAiYxi9vJ3N16psdoOfo4wzG5dXtZYOyRFrFGothX2cUVRn2K;Kevin;Roucaillou;kevin@gmail.com;true;fr;admin;2015-12-03 09:52:45.364451

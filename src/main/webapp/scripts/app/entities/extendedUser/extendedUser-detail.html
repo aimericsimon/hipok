@@ -1,0 +1,102 @@
+
+<div>
+    <h2><span>ExtendedUser</span> {{extendedUser.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>BirthDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{extendedUser.birthDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Sex</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'hipokApp.Sex.' + extendedUser.sex}}">{{extendedUser.sex}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PracticeLocation</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{extendedUser.practiceLocation}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>AdeliNumber</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{extendedUser.adeliNumber}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>medicalTypeRef</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="medicalTypeRef.detail({id:extendedUser.medicalTypeRefId})">{{extendedUser.medicalTypeRefId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>rppsRef</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="rppsRef.detail({id:extendedUser.rppsRefId})">{{extendedUser.rppsRefId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>user</span>
+                </td>
+                <td>
+                    {{extendedUser.userId}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>address</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="address.detail({id:extendedUser.addressId})">{{extendedUser.addressId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>titleRef</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="titleRef.detail({id:extendedUser.titleRefId})">{{extendedUser.titleRefLabel}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>situationRef</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="situationRef.detail({id:extendedUser.situationRefId})">{{extendedUser.situationRefId}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

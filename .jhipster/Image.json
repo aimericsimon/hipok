@@ -1,0 +1,18 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 1,
+            "fieldName": "imageThumbnailUrl",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151125130905",
+    "dto": "no",
+    "pagination": "no"
+}

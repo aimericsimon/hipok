@@ -1,0 +1,24 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "sharerProfile",
+      "relationshipFieldName": "sharerProfile",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "description"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "publication",
+      "relationshipFieldName": "publication",
+      "otherEntityName": "publication",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "description"
+    }
+  ],
+  "fields": [],
+  "changelogDate": "20151129134451",
+  "dto": "no",
+  "pagination": "no"
+}

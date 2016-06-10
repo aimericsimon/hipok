@@ -1,0 +1,5 @@
+"id";"birth_date";"sex";"practice_location";"adeli_number";"medical_type_ref_id";"rpps_ref_id";"user_id";"address_id";"title_ref_id";"situation_ref_id"
+1;"1970-11-27 14:49:13.608";"M";"White house";"123";1;1;5;1;1;1
+2;"1950-11-27 14:49:13.608";"M";"My flat";"456";1;2;6;2;1;1
+3;"1945-11-27 14:49:13.608";"M";"Melun Nord";"789";1;3;7;3;1;1
+4;"1935-11-27 13:49:13.608";"M";"Sarlat";NULL;1;NULL;8;4;1;4

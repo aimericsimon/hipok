@@ -1,0 +1,17 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "label",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "mapstruct",
+  "pagination": "no"
+}

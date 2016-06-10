@@ -1,0 +1,40 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "user",
+      "relationshipFieldName": "user",
+      "otherEntityName": "extendedUser",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "address"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "label",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "postalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "city",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "100"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "no",
+  "pagination": "no"
+}

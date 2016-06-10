@@ -1,0 +1,93 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myExtendedUserLabel">Create or edit a ExtendedUser</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="extendedUser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_birthDate">BirthDate</label>
+            <input type="date" class="form-control" name="birthDate" id="field_birthDate"
+                    ng-model="extendedUser.birthDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_sex">Sex</label>
+            <select class="form-control" name="sex" ng-model="extendedUser.sex" id="field_sex">
+                <option value="M">M</option>
+                <option value="F">F</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_practiceLocation">PracticeLocation</label>
+            <input type="text" class="form-control" name="practiceLocation" id="field_practiceLocation"
+                    ng-model="extendedUser.practiceLocation"
+                    ng-maxlength="200" />
+            <div ng-show="editForm.practiceLocation.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.practiceLocation.$error.maxlength" translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_adeliNumber">AdeliNumber</label>
+            <input type="text" class="form-control" name="adeliNumber" id="field_adeliNumber"
+                    ng-model="extendedUser.adeliNumber"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_medicalTypeRef">medicalTypeRef</label>
+            <select class="form-control" id="field_medicalTypeRef" name="medicalTypeRef" ng-model="extendedUser.medicalTypeRefId" ng-options="medicalTypeRef.id as medicalTypeRef.id for medicalTypeRef in medicaltyperefs">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_rppsRef">rppsRef</label>
+            <select class="form-control" id="field_rppsRef" name="rppsRef" ng-model="extendedUser.rppsRefId" ng-options="rppsRef.id as rppsRef.id for rppsRef in rppsrefs | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="extendedUser.userId" ng-options="user.id as user.id for user in users">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_address">address</label>
+            <select class="form-control" id="field_address" name="address" ng-model="extendedUser.addressId" ng-options="address.id as address.id for address in addresss">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_titleRef">titleRef</label>
+            <select class="form-control" id="field_titleRef" name="titleRef" ng-model="extendedUser.titleRefId" ng-options="titleRef.id as titleRef.label for titleRef in titlerefs">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_situationRef">situationRef</label>
+            <select class="form-control" id="field_situationRef" name="situationRef" ng-model="extendedUser.situationRefId" ng-options="situationRef.id as situationRef.id for situationRef in situationrefs">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

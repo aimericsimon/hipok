@@ -1,0 +1,18 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-4">
+            <span class="hipok img-responsive img-rounded"></span>
+        </div>
+        <div class="col-md-8">
+            <div ng-switch="isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true">
+                    Bienvenue {{account.login}} sur Hipok!
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    Bienvenue sur Hipok!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

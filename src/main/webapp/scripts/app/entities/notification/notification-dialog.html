@@ -1,0 +1,75 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myNotificationLabel">Create or edit a Notification</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="notification.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_creationDate">CreationDate</label>
+            <input id="field_creationDate" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="notification.creationDate" is-open="datePickerForCreationDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForCreationDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_read">Read</label>
+            <input type="checkbox" class="form-control" name="read" id="field_read"
+                    ng-model="notification.read"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_type">Type</label>
+            <select class="form-control" name="type" ng-model="notification.type" id="field_type">
+                <option value="COMMENT">COMMENT</option>
+                <option value="SHARE">SHARE</option>
+                <option value="ASK_FOLLOW">ASK_FOLLOW</option>
+                <option value="ACCEPT_FOLLOW">ACCEPT_FOLLOW</option>
+                <option value="MENTION_COMMENT">MENTION_COMMENT</option>
+                <option value="MENTION_PUBLICATION">MENTION_PUBLICATION</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_itemId">ItemId</label>
+            <input type="number" class="form-control" name="itemId" id="field_itemId"
+                    ng-model="notification.itemId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_data">Data</label>
+            <input type="text" class="form-control" name="data" id="field_data"
+                    ng-model="notification.data"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_receiverProfile">receiverProfile</label>
+            <select class="form-control" id="field_receiverProfile" name="receiverProfile" ng-model="notification.receiverProfileId" ng-options="profile.id as profile.id for profile in profiles">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_emitterProfile">emitterProfile</label>
+            <select class="form-control" id="field_emitterProfile" name="emitterProfile" ng-model="notification.emitterProfileId" ng-options="profile.id as profile.id for profile in profiles">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

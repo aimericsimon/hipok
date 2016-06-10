@@ -1,0 +1,90 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myCommentLabel">Create or edit a Comment</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="comment.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_text">Text</label>
+            <input type="text" class="form-control" name="text" id="field_text"
+                    ng-model="comment.text"
+                    required ng-minlength="0" ng-maxlength="1000" />
+            <div ng-show="editForm.text.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.text.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.text.$error.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.text.$error.maxlength" translate-value-max="1000">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_creationDate">CreationDate</label>
+            <input type="datetime-local" class="form-control" name="creationDate" id="field_creationDate"
+                    ng-model="comment.creationDate"
+                    required />
+            <div ng-show="editForm.creationDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.creationDate.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.creationDate.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_processedText">ProcessedText</label>
+            <input type="text" class="form-control" name="processedText" id="field_processedText"
+                    ng-model="comment.processedText"
+                    ng-maxlength="3000" />
+            <div ng-show="editForm.processedText.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.processedText.$error.maxlength" translate-value-max="3000">
+                    This field cannot be longer than 3000 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_commentatorProfile">commentatorProfile</label>
+            <select class="form-control" id="field_commentatorProfile" name="commentatorProfile" ng-model="comment.commentatorProfile" ng-options="profile as profile.description for profile in profiles track by profile.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_publication">publication</label>
+            <select class="form-control" id="field_publication" name="publication" ng-model="comment.publication" ng-options="publication as publication.description for publication in publications track by publication.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_hashtag">hashtag</label>
+            <select class="form-control" id="field_hashtag" multiple name="hashtag" ng-model="comment.hashtags" ng-options="hashtag as hashtag.id for hashtag in hashtags track by hashtag.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

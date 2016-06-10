@@ -1,0 +1,22 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "declaration",
+            "relationshipFieldName": "declaration",
+            "otherEntityName": "declaration",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "declarationTypeRef"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "label",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151125130905",
+    "dto": "no",
+    "pagination": "no"
+}

@@ -1,0 +1,119 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "authorProfile",
+      "relationshipFieldName": "authorProfile",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "description"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "comment",
+      "relationshipFieldName": "comment",
+      "otherEntityName": "comment",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "publication"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "reporting",
+      "relationshipFieldName": "reporting",
+      "otherEntityName": "reporting",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "reportedPublication"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "share",
+      "relationshipFieldName": "share",
+      "otherEntityName": "share",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "publication"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "hashtag",
+      "relationshipFieldName": "hashtag",
+      "otherEntityName": "hashtag",
+      "relationshipType": "many-to-many",
+      "ownerSide": true,
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 6,
+      "relationshipName": "anatomicZoneRef",
+      "relationshipFieldName": "anatomicZoneRef",
+      "otherEntityName": "anatomicZoneRef",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "label"
+    },
+    {
+      "relationshipId": 7,
+      "relationshipName": "specialtyRef",
+      "relationshipFieldName": "specialtyRef",
+      "otherEntityName": "specialtyRef",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "label"
+    },
+      {
+          "relationshipId": 8,
+          "relationshipName": "image",
+          "relationshipFieldName": "image",
+          "otherEntityName": "image",
+          "relationshipType": "many-to-one",
+          "otherEntityField": "id"
+      }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "location",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "200"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "visibility",
+      "fieldType": "Visibility",
+      "fieldValues": "PUBLIC,PRIVATE"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "publicationDate",
+      "fieldType": "DateTime"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "nbVizualisations",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "processedDescription",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "3000"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "mapstruct",
+  "pagination": "pager",
+  "fieldsContainDateTime": true,
+  "fieldsContainCustomTime": true
+}

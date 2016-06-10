@@ -1,0 +1,110 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "follower",
+      "relationshipFieldName": "follower",
+      "otherEntityName": "follow",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "follower"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "following",
+      "relationshipFieldName": "following",
+      "otherEntityName": "follow",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "followed"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "publication",
+      "relationshipFieldName": "publication",
+      "otherEntityName": "publication",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "authorProfile"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "comment",
+      "relationshipFieldName": "comment",
+      "otherEntityName": "comment",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "commentatorProfile"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "reporting",
+      "relationshipFieldName": "reporting",
+      "otherEntityName": "reporting",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "reporterProfile"
+    },
+    {
+      "relationshipId": 6,
+      "relationshipName": "share",
+      "relationshipFieldName": "share",
+      "otherEntityName": "share",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "sharerProfile"
+    },
+    {
+      "relationshipId": 7,
+      "relationshipName": "extendedUser",
+      "relationshipFieldName": "extendedUser",
+      "otherEntityName": "extendedUser",
+      "relationshipType": "one-to-one",
+      "ownerSide": true,
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "profile"
+    },
+    {
+      "relationshipId": 8,
+      "relationshipName": "receiverNotification",
+      "relationshipFieldName": "receiverNotification",
+      "otherEntityName": "notification",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "receiverProfile"
+    },
+    {
+      "relationshipId": 9,
+      "relationshipName": "emitterNotification",
+      "relationshipFieldName": "emitterNotification",
+      "otherEntityName": "notification",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "emitterProfile"
+    },
+      {
+          "relationshipId": 10,
+          "relationshipName": "device",
+          "relationshipFieldName": "device",
+          "otherEntityName": "device",
+          "relationshipType": "one-to-many",
+          "otherEntityRelationshipName": "deviceProfile"
+      }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "avatarUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "avatarThumbnailUrl",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "mapstruct",
+  "pagination": "no"
+}

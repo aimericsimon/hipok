@@ -1,0 +1,59 @@
+<div>
+    <h2>Declarations</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="declaration.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new Declaration</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="declarationDate"><span>DeclarationDate</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="profile.description"><span>profile</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="declarationTypeRef.label"><span>declarationTypeRef</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="declaration in declarations track by declaration.id">
+                    <td><a ui-sref="declaration.detail({id:declaration.id})">{{declaration.id}}</a></td>
+                    <td>{{declaration.description}}</td>
+                    <td>{{declaration.declarationDate | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="profile.detail({id:declaration.profile.id})">{{declaration.profile.description}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="declarationTypeRef.detail({id:declaration.declarationTypeRef.id})">{{declaration.declarationTypeRef.label}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="declaration.detail({id:declaration.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="declaration.edit({id:declaration.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="declaration.delete({id:declaration.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <uib-pager total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pager>
+</div>

@@ -1,0 +1,36 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "specialtyRef",
+      "relationshipFieldName": "specialtyRef",
+      "otherEntityName": "specialtyRef",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "medicalTypeRef"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "extendedUser",
+      "relationshipFieldName": "extendedUser",
+      "otherEntityName": "extendedUser",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "medicalTypeRef"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "subtype",
+      "fieldType": "MedicalSubType",
+      "fieldValues": "MEDICAL,PARAMEDICAL"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "label",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "no",
+  "pagination": "no"
+}

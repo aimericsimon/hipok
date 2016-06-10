@@ -1,0 +1,50 @@
+id,label,medical_type_ref_id
+1,Autre,1
+2,Anatomopathologie,1
+3,Biologie médicale,1
+4,Chirurgien,1
+5,Chirurgie cardiaque,1
+6,Chirurgie dentaire,1
+7,Chirurgie buccale,1
+8,Chirurgie esthétique-reconstructrice,1
+9,Chirurgie orthopédique,1
+10,Chirurgie urologique,1
+11,Chirurgie viscérale,1
+12,Endocrinologie,1
+13,Génétique médicale,1
+14,Gériatrie,1
+15,Hépato-gastro-entérologie,1
+16,Médecine interne,1
+17,Médecine du travail,1
+18,Neurologie,1
+19,Nutrition,1
+20,Oncologie,1
+21,ORL,1
+22,Pédiatrie,1
+23,Psychiatrie,1
+24,Radiologie,1
+25,Rééducation fonctionnelle,1
+26,Rhumatologie,1
+27,Anesthésie,1
+28,Réanimation,1
+29,Cardiologie,1
+30,Chirurgie thoracique,1
+31,Chirurgie maxillo-faciale,1
+32,Chirurgie pédiatrique,1
+33,Chirurgie vasculaire,1
+34,Dermatologie,1
+35,Gynécologie-obstétrique,1
+36,Hématologie,1
+37,Maladies infectieuses,1
+38,Médecine d'urgence,1
+39,Médecine nucléaire,1
+40,Néphrologie,1
+41,Neurochirurgie,1
+42,Odontologie,1
+43,Ophtalmologie,1
+44,Pneumologie,1
+45,Psychiatrie,1
+46,Radiothérapie,1
+47,Santé publique,1
+48,Stomatologie,1
+49,Traumatologie,1

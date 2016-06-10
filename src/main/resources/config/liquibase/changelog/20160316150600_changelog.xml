@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gni (generated)" id="20160316150600-1" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/users.csv"
+                  separator=";"
+                  tableName="jhi_user">
+            <column name="activated" type="boolean"/>
+            <column name="created_date" type="timestamp"/>
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-2" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/users_authorities.csv"
+                  separator=";"
+                  tableName="jhi_user_authority">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-3" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/addresses.csv"
+                  separator=";"
+                  tableName="address">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-4" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/extended_users.csv"
+                  separator=";"
+                  tableName="extended_user">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-5" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/profiles.csv"
+                  separator=";"
+                  tableName="profile">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-6" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/follows.csv"
+                  separator=";"
+                  tableName="follow">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-7" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/images.csv"
+                  separator=";"
+                  tableName="image">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-8" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/publications.csv"
+                  separator=";"
+                  tableName="publication">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-9" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/comments.csv"
+                  separator=";"
+                  tableName="comment">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-10" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/reportings.csv"
+                  separator=";"
+                  tableName="reporting">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150600-11" context="dev">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data_dev/shares.csv"
+                  separator=";"
+                  tableName="share">
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

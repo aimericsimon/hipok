@@ -1,0 +1,42 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "profile",
+            "relationshipFieldName": "profile",
+            "otherEntityName": "profile",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "description"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "declarationTypeRef",
+            "relationshipFieldName": "declarationTypeRef",
+            "otherEntityName": "declarationTypeRef",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "label"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "3000"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "declarationDate",
+            "fieldType": "DateTime"
+        }
+    ],
+    "changelogDate": "20151125130905",
+    "dto": "no",
+    "pagination": "no",
+    "pagination": "pager",
+    "fieldsContainDateTime": true,
+    "fieldsContainCustomTime": true
+}

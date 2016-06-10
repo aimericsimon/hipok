@@ -1,0 +1,34 @@
+
+<div>
+    <h2><span>Auth Etat</span> {{vm.authEtat.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Id Profile</span></dt>
+        <dd>
+            <span>{{vm.authEtat.idProfile}}</span>
+        </dd>
+        <dt><span>Id Image Auth</span></dt>
+        <dd>
+            <span>{{vm.authEtat.idImageAuth}}</span>
+        </dd>
+        <dt><span>Etat</span></dt>
+        <dd>
+            <span>{{vm.authEtat.etat}}</span>
+        </dd>
+        <dt><span>Profile</span></dt>
+        <dd>
+            <a ui-sref="profile-detail({id:vm.authEtat.profileId})">{{vm.authEtat.profileId}}</a>
+        </dd>
+        <dt><span>Image Auth</span></dt>
+        <dd>
+            <a ui-sref="image-auth-detail({id:vm.authEtat.imageAuthId})">{{vm.authEtat.imageAuthId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

@@ -1,0 +1,24 @@
+# robotstxt.org/
+
+User-agent: *
+Disallow: /app/account
+Disallow: /app/account/change_password
+Disallow: /api/account/sessions
+Disallow: /app/account/sessions
+Disallow: /api/audits/
+Disallow: /api/logs/
+Disallow: /api/users/
+Disallow: /metrics/
+Disallow: /health/
+Disallow: /trace/
+Disallow: /dump/
+Disallow: /shutdown/
+Disallow: /beans/
+Disallow: /configprops/
+Disallow: /info/
+Disallow: /autoconfig/
+Disallow: /env/
+Disallow: /trace/
+Disallow: /v2/api-docs/
+Disallow: /configuration/
+Disallow: /protected/

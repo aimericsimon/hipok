@@ -1,0 +1,53 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "receiverProfile",
+      "relationshipFieldName": "receiverProfile",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "emitterProfile",
+      "relationshipFieldName": "emitterProfile",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "creationDate",
+      "fieldType": "DateTime"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "read",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "type",
+      "fieldType": "NotificationType",
+      "fieldValues": " COMMENT,SHARE,ASK_FOLLOW,ACCEPT_FOLLOW,REPORT,MENTION_COMMENT, MENTION_PUBLICATION"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "itemId",
+      "fieldType": "Long"
+    },
+      {
+          "fieldId": 5,
+          "fieldName": "data",
+          "fieldType": "String"
+      }
+  ],
+  "changelogDate": "20151211134145",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "fieldsContainDateTime": true,
+  "fieldsContainCustomTime": true
+}

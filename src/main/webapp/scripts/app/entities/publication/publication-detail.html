@@ -1,0 +1,112 @@
+
+<div>
+    <h2><span>Publication</span> {{publication.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{publication.description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Location</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{publication.location}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Visibility</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'hipokApp.Visibility.' + publication.visibility}}">{{publication.visibility}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PublicationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{publication.publicationDate | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>NbVizualisations</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{publication.nbVizualisations}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ProcessedDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{publication.processedDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>authorProfile</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="profile.detail({id:publication.authorProfileId})">{{publication.authorProfileDescription}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>hashtag</span>
+                </td>
+                <td>
+                    <span ng-repeat="hashtag in publication.hashtags">
+                        <a class="form-control-static" ui-sref="hashtag.detail({id: {{hashtag.id}}})">{{hashtag.id}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>anatomicZoneRef</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="anatomicZoneRef.detail({id:publication.anatomicZoneRefId})">{{publication.anatomicZoneRefLabel}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>specialtyRef</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="specialtyRef.detail({id:publication.specialtyRefId})">{{publication.specialtyRefLabel}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>image</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="image.detail({id:publication.imageId})">{{publication.imageId}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

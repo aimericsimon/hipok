@@ -1,0 +1,30 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "publication",
+      "relationshipFieldName": "publication",
+      "otherEntityName": "publication",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "specialtyRef"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "medicalTypeRef",
+      "relationshipFieldName": "medicalTypeRef",
+      "otherEntityName": "medicalTypeRef",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "label"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "label",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "no",
+  "pagination": "no"
+}

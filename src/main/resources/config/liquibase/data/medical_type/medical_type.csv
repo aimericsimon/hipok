@@ -1,0 +1,80 @@
+id,label,subtype
+1,Autre,PARAMEDICAL
+2,Aide-soignant,PARAMEDICAL
+3,Auxiliaire de puériculture,PARAMEDICAL
+4,Diététicien,PARAMEDICAL
+5,Ergothérapeute,PARAMEDICAL
+6,Infirmier,PARAMEDICAL
+7,Infirmière puéricultrice,PARAMEDICAL
+8,Manipulateur en électro radiologie médicale,PARAMEDICAL
+9,Masseur-kinésithérapeute,PARAMEDICAL
+10,Opticien,PARAMEDICAL
+11,Orthophoniste,PARAMEDICAL
+12,Orthoptiste,PARAMEDICAL
+13,Ostéopathe,PARAMEDICAL
+14,Chiropracteur,PARAMEDICAL
+15,Pédicure-podologue,PARAMEDICAL
+16,Préparateur en pharmacie,PARAMEDICAL
+17,Podo-orthésiste,PARAMEDICAL
+18,Prothésiste dentaire,PARAMEDICAL
+19,Psychomotricien,PARAMEDICAL
+20,Puériculteur,PARAMEDICAL
+21,Technicien de laboratoire / analyse biomédicale,PARAMEDICAL
+22,Psychologue,PARAMEDICAL
+23,Travailleur social,PARAMEDICAL
+24,Cadre de santé,PARAMEDICAL
+25,Autre,MEDICAL
+26,Anatomopathologiste,MEDICAL
+27,Biologiste médical,MEDICAL
+28,Chirurgien,MEDICAL
+29,Chirurgien cardiaque,MEDICAL
+30,Chirurgien-dentiste,MEDICAL
+31,Chirurgien esthétique,MEDICAL
+32,Chirurgien gynéco-obstétricien,MEDICAL
+33,Chirurgien plastique,MEDICAL
+34,Chirurgien orthopédiste,MEDICAL
+35,Chirurgien urologue,MEDICAL
+36,Chirurgien viscéral,MEDICAL
+37,Endocrinologue,MEDICAL
+38,Généticien,MEDICAL
+39,Gériatre,MEDICAL
+40,Hépato-gastro-entérologue,MEDICAL
+41,Médecin interniste,MEDICAL
+42,Médecin du travail,MEDICAL
+43,Neurologue,MEDICAL
+44,Nutritionniste,MEDICAL
+45,Oncologue,MEDICAL
+46,ORL,MEDICAL
+47,Pédiatre,MEDICAL
+48,Psychiatre,MEDICAL
+49,Radiologue,MEDICAL
+50,Rééducateur fonctionnel,MEDICAL
+51,Rhumatologue,MEDICAL
+52,Anesthésiste,MEDICAL
+53,Réanimateur,MEDICAL
+54,Cardiologue,MEDICAL
+55,Chirurgien thoracique,MEDICAL
+56,Chirurgien maxillo-facial,MEDICAL
+57,Chirurgien pédiatrique,MEDICAL
+58,Chirurgien vasculaire,MEDICAL
+59,Dermatologue,MEDICAL
+60,Gynécologue médical,MEDICAL
+61,Gynécologue obstétrical,MEDICAL
+62,Hématologue,MEDICAL
+63,Infectiologue,MEDICAL
+64,Médecin généraliste,MEDICAL
+65,Médecin urgentiste,MEDICAL
+66,Médecin nucléaire,MEDICAL
+67,Néphrologue,MEDICAL
+68,Neurochirurgien,MEDICAL
+69,Odontologue,MEDICAL
+70,Ophtalmologiste,MEDICAL
+71,Pneumologue,MEDICAL
+72,Psychiatre,MEDICAL
+73,Radiothérapeute,MEDICAL
+74,Santé publique,MEDICAL
+75,Stomatologie,MEDICAL
+76,Traumatologie,MEDICAL
+77,Pharmacien hospitalier,MEDICAL
+78,Pharmacien d’officine,MEDICAL
+79,Sage-Femme,MEDICAL

@@ -1,0 +1,56 @@
+<div>
+    <h2>Reportings</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="reporting.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new Reporting</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ReportingDate</th>
+                    <th>reporterProfile</th>
+                    <th>reportedPublication</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="reporting in reportings track by reporting.id">
+                    <td><a ui-sref="reporting.detail({id:reporting.id})">{{reporting.id}}</a></td>
+                    <td>{{reporting.reportingDate | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="profile.detail({id:reporting.reporterProfile.id})">{{reporting.reporterProfile.description}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="publication.detail({id:reporting.reportedPublication.id})">{{reporting.reportedPublication.description}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="reporting.detail({id:reporting.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="reporting.edit({id:reporting.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="reporting.delete({id:reporting.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

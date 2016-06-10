@@ -1,0 +1,48 @@
+<div>
+    <h2>AnatomicZoneRefs</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="anatomicZoneRef.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new AnatomicZoneRef</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Label</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="anatomicZoneRef in anatomicZoneRefs track by anatomicZoneRef.id">
+                    <td><a ui-sref="anatomicZoneRef.detail({id:anatomicZoneRef.id})">{{anatomicZoneRef.id}}</a></td>
+                    <td>{{anatomicZoneRef.label}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="anatomicZoneRef.detail({id:anatomicZoneRef.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="anatomicZoneRef.edit({id:anatomicZoneRef.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="anatomicZoneRef.delete({id:anatomicZoneRef.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "baseName": "hipok",
+    "packageName": "com.happy.hipok",
+    "packageFolder": "com/happy/hipok",
+    "authenticationType": "xauth",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "862ae72b9bc9d96b04edb93d992cb6d5b39b9b38",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ]
+  }
+}

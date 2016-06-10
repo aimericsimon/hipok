@@ -1,0 +1,53 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myFollowLabel">Create or edit a Follow</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="follow.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_state">State</label>
+            <select class="form-control" name="state" ng-model="follow.state" id="field_state">
+                <option value="PENDING">PENDING</option>
+                <option value="ACCEPTED">ACCEPTED</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_date">Date</label>
+            <input id="field_date" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="follow.date" is-open="datePickerForDate.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForDateOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="field_follower">follower</label>
+            <select class="form-control" id="field_follower" name="follower" ng-model="follow.follower" ng-options="profile as profile.description for profile in profiles track by profile.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_following">following</label>
+            <select class="form-control" id="field_following" name="following" ng-model="follow.following" ng-options="profile as profile.description for profile in profiles track by profile.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,109 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPublicationLabel">Create or edit a Publication</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="publication.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="publication.description"
+                    ng-maxlength="1000" />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.maxlength" translate-value-max="1000">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_location">Location</label>
+            <input type="text" class="form-control" name="location" id="field_location"
+                    ng-model="publication.location"
+                    ng-maxlength="200" />
+            <div ng-show="editForm.location.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.location.$error.maxlength" translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_visibility">Visibility</label>
+            <select class="form-control" name="visibility" ng-model="publication.visibility" id="field_visibility">
+                <option value="PUBLIC">PUBLIC</option>
+                <option value="PRIVATE">PRIVATE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_publicationDate">PublicationDate</label>
+            <input type="datetime-local" class="form-control" name="publicationDate" id="field_publicationDate"
+                    ng-model="publication.publicationDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_nbVizualisations">NbVizualisations</label>
+            <input type="number" class="form-control" name="nbVizualisations" id="field_nbVizualisations"
+                    ng-model="publication.nbVizualisations"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_processedDescription">ProcessedDescription</label>
+            <input type="text" class="form-control" name="processedDescription" id="field_processedDescription"
+                    ng-model="publication.processedDescription"
+                    ng-maxlength="3000" />
+            <div ng-show="editForm.processedDescription.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.processedDescription.$error.maxlength" translate-value-max="3000">
+                    This field cannot be longer than 3000 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_authorProfile">authorProfile</label>
+            <select class="form-control" id="field_authorProfile" name="authorProfile" ng-model="publication.authorProfileId" ng-options="profile.id as profile.description for profile in profiles">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_hashtag">hashtag</label>
+            <select class="form-control" id="field_hashtag" multiple name="hashtag" ng-model="publication.hashtags" ng-options="hashtag as hashtag.id for hashtag in hashtags track by hashtag.id"></select>
+        </div>
+        <div class="form-group">
+            <label for="field_anatomicZoneRef">anatomicZoneRef</label>
+            <select class="form-control" id="field_anatomicZoneRef" name="anatomicZoneRef" ng-model="publication.anatomicZoneRefId" ng-options="anatomicZoneRef.id as anatomicZoneRef.label for anatomicZoneRef in anatomiczonerefs">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_specialtyRef">specialtyRef</label>
+            <select class="form-control" id="field_specialtyRef" name="specialtyRef" ng-model="publication.specialtyRefId" ng-options="specialtyRef.id as specialtyRef.label for specialtyRef in specialtyrefs">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_image">image</label>
+            <select class="form-control" id="field_image" name="image" ng-model="publication.imageId" ng-options="image.id as image.id for image in images">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

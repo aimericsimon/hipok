@@ -1,0 +1,65 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "commentatorProfile",
+      "relationshipFieldName": "commentatorProfile",
+      "otherEntityName": "profile",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "description"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "publication",
+      "relationshipFieldName": "publication",
+      "otherEntityName": "publication",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "description"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "hashtag",
+      "relationshipFieldName": "hashtag",
+      "otherEntityName": "hashtag",
+      "relationshipType": "many-to-many",
+      "ownerSide": true,
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "text",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength",
+        "minlength"
+      ],
+      "fieldValidateRulesMaxlength": "1000",
+      "fieldValidateRulesMinlength": "0"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "creationDate",
+      "fieldType": "DateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "processedText",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "3000"
+    }
+  ],
+  "changelogDate": "20151125130905",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "fieldsContainDateTime": true,
+  "fieldsContainCustomTime": true
+}

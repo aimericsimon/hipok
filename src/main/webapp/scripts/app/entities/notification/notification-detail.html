@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span>Notification</span> {{notification.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>CreationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.creationDate | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Read</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.read}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'hipokApp.NotificationType.' + notification.type}}">{{notification.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ItemId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.itemId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Data</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{notification.data}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>receiverProfile</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="profile.detail({id:notification.receiverProfileId})">{{notification.receiverProfileId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>emitterProfile</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="profile.detail({id:notification.emitterProfileId})">{{notification.emitterProfileId}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

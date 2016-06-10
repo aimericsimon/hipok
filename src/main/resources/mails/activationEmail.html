@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
+    <title th:text="#{email.activation.title}">Mail de confirmation d'inscription</title>
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="620">
+    <tr>
+        <td height="15"></td>
+    </tr>
+</table>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="620">
+    <tr>
+        <td bgcolor="#14162b" style="background-color:#14162b;" height="10"></td>
+    </tr>
+    <tr>
+        <td bgcolor="#14162b" style="background-color:#14162b;">
+            <p th:text="#{email.activation.titleSecond}" style="width:100%;text-align:center;color:#ffffff;font-family:Arial,sans-serif;margin:0;font-size:25px;font-weight:normal;">Bienvenue sur Hipok !</p>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#14162b" style="background-color:#14162b;text-align:center">
+            <img th:src="@{|${baseUrl}/assets/images/logo.gif|}" alt="Hipok" style="color:#ffffff;max-width:100%;display:block;margin:0;padding:0;" />
+        </td>
+    </tr>
+</table>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="620">
+    <!-- CONTENT // -->
+    <tr>
+        <td bgcolor="#f9f9f9" width="100%" style="font-family:Arial,sans-serif;border:1px solid #14162b;background:#f9f9f9;">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td height="15"></td>
+                    <td height="15"></td>
+                    <td height="15"></td>
+                </tr>
+                <tr>
+                    <td width="15"></td>
+                    <td>
+                        <span th:text="#{email.greeting}" style="font-family:Arial,sans-serif;color:#14162b;">Bonjour</span> <span th:text="#{email.tnp(${extendedUser.titleRef.abbreviation}, ${extendedUser.user.firstName}, ${extendedUser.user.lastName})}" style="font-style:italic;font-weight:bold;font-family:Arial,sans-serif;color:#14162b;">TPN</span><span>,</span>
+                        <p th:text="#{email.activation.text1}" style="font-family:Arial,sans-serif;color:#14162b;">
+                            Vous venez de vous inscrire sur Hipok, le plus grand r&eacute;seau professionnel de soins en France.
+                        </p>
+                        <p th:text="#{email.activation.text2}" style="font-family:Arial,sans-serif;color:#14162b;">
+                            La mission de Hipok est simple : connecter les professionnels de la sant&eacute; entre eux pour am&eacute;liorer la prise en charge de leurs patients. En rejoignant Hipok, vous avez acc&egrave;s &agrave; vos confr&egrave;res, aux derni&egrave;res actualit&eacute;s, aux nouvelles et informations qui vous permettront de devenir encore meilleur dans vos activit&eacute;s.
+                        </p>
+                        <p th:text="#{email.activation.text3}">
+                            Votre profil vous permet :
+                        </p>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="10"></td>
+                                <td>
+
+
+                                    <img th:src="@{|${baseUrl}/assets/images/icon_01.gif|}" alt="icone social" style="display:block;border:1px solid #14162b;margin:0;padding:0;"/>
+                                </td>
+                                <td width="10"></td>
+                                <td>
+                                    <p th:text="#{email.activation.text4}" style="font-family:Arial,sans-serif;color:#14162b;">
+                                        de constituer votre r&eacute;seau professionnel.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10"></td>
+                                <td>
+                                    <img th:src="@{|${baseUrl}/assets/images/icon_02.gif|}" alt="icone partage" style="display:block;border:1px solid #14162b;margin:0;padding:0;"/>
+                                </td>
+                                <td width="10"></td>
+                                <td>
+                                    <p th:text="#{email.activation.text5}" style="font-family:Arial,sans-serif;color:#14162b;">
+                                        de partager, suivre et commenter des images   m&eacute;dicales sur un mur de partage.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p style="font-family:Arial,sans-serif;color:#14162b;">
+                            <span th:text="#{email.activation.text6}" style="font-family:Arial,sans-serif;color:#14162b;">Si toutefois vous n'&eacute;tiez pas &agrave; l'initiative de cette inscription, vous pouvez nous le signaler en nous &eacute;crivant &agrave;</span> <a th:href="#{email.mailto.email}" th:text="#{email.email}" style="color:#0084cd;">welcome@hipok.com</a>.
+
+                        </p>
+                        <p th:text="#{email.signature}" style="font-family:Arial,sans-serif;color:#14162b;margin-bottom:0;">
+                            L'&eacute;quipe Hipok
+                        </p>
+                    </td>
+                    <td width="15"></td>
+                </tr>
+                <tr>
+                    <td height="15"></td>
+                    <td height="15"></td>
+                    <td height="15"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- //CONTENT // -->
+</table>
+</body>
+</html>

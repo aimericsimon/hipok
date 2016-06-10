@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="gni (generated)" id="20160316150500-1">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/anatomic_zone/anatomic_zone.csv"
+                  separator=","
+                  tableName="anatomic_zone_ref">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150500-2">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/medical_type/medical_type.csv"
+                  separator=","
+                  tableName="medical_type_ref">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150500-3">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/rpps/RPPS1.csv"
+                  separator=","
+                  tableName="rpps_ref">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/rpps/RPPS2.csv"
+                  separator=","
+                  tableName="rpps_ref">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/rpps/RPPS3.csv"
+                  separator=","
+                  tableName="rpps_ref">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/rpps/RPPS4.csv"
+                  separator=","
+                  tableName="rpps_ref">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/rpps/RPPS5.csv"
+                  separator=","
+                  tableName="rpps_ref">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/rpps/RPPS6.csv"
+                  separator=","
+                  tableName="rpps_ref">
+        </loadData>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/rpps/RPPS7.csv"
+                  separator=","
+                  tableName="rpps_ref">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150500-4">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/specialty/specialty.csv"
+                  separator=","
+                  tableName="specialty_ref">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150500-5">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/title/title1.csv"
+                  separator=","
+                  tableName="title_ref">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150500-6">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/situation/situation.csv"
+                  separator=","
+                  tableName="situation_ref">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150500-7">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/edito/edito.csv"
+                  separator=";"
+                  tableName="edito">
+        </loadData>
+    </changeSet>
+	<changeSet author="gni (generated)" id="20160316150500-8">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/declaration_type/declaration_type.csv"
+                  separator=","
+                  tableName="declaration_type_ref">
+        </loadData>
+    </changeSet>
+    <changeSet author="gni (generated)" id="20160316150500-9">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/data/declaration_email/declaration_email.csv"
+                  separator=","
+                  tableName="declaration_email">
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

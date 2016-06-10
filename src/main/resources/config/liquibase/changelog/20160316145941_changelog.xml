@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="Dahwoud (generated)" id="1458136794089-1">
+      <createTable tableName="address">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="addressPK"/>
+         </column>
+         <column name="city" type="VARCHAR(100)"/>
+         <column name="label" type="VARCHAR(200)"/>
+         <column name="postal_code" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-2">
+      <createTable tableName="anatomic_zone_ref">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="anatomic_zone_refPK"/>
+         </column>
+         <column name="label" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-3">
+      <createTable tableName="comment">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="commentPK"/>
+         </column>
+         <column name="creation_date" type="timestamp">
+            <constraints nullable="false"/>
+         </column>
+         <column name="processed_text" type="VARCHAR(3000)"/>
+         <column name="text" type="VARCHAR(1000)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="commentator_profile_id" type="BIGINT"/>
+         <column name="publication_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-4">
+      <createTable tableName="comment_hashtag">
+         <column name="comments_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="hashtags_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-5">
+      <createTable tableName="declaration">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="declarationPK"/>
+         </column>
+         <column name="declaration_date" type="timestamp"/>
+         <column name="description" type="VARCHAR(3000)"/>
+         <column name="declaration_type_ref_id" type="BIGINT"/>
+         <column name="profile_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-6">
+      <createTable tableName="declaration_email">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="declaration_emailPK"/>
+         </column>
+         <column name="email" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-7">
+      <createTable tableName="declaration_type_ref">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="declaration_type_refPK"/>
+         </column>
+         <column name="label" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-8">
+      <createTable tableName="edito">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="editoPK"/>
+         </column>
+         <column name="description" type="VARCHAR(3000)"/>
+         <column name="label" type="VARCHAR(100)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-9">
+      <createTable tableName="extended_user">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="extended_userPK"/>
+         </column>
+         <column name="adeli_number" type="VARCHAR(255)"/>
+         <column name="birth_date" type="date"/>
+         <column name="practice_location" type="VARCHAR(200)"/>
+         <column name="sex" type="VARCHAR(255)"/>
+         <column name="address_id" type="BIGINT"/>
+         <column name="medical_type_ref_id" type="BIGINT"/>
+         <column name="rpps_ref_id" type="BIGINT"/>
+         <column name="situation_ref_id" type="BIGINT"/>
+         <column name="title_ref_id" type="BIGINT"/>
+         <column name="user_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-10">
+      <createTable tableName="follow">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="followPK"/>
+         </column>
+         <column name="date" type="timestamp"/>
+         <column name="state" type="VARCHAR(255)"/>
+         <column name="follower_id" type="BIGINT"/>
+         <column name="following_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-11">
+      <createTable tableName="hashtag">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="hashtagPK"/>
+         </column>
+         <column name="label" type="VARCHAR(100)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-12">
+      <createTable tableName="image">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="imagePK"/>
+         </column>
+         <column name="image_thumbnail_url" type="VARCHAR(255)"/>
+         <column name="image_url" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-13">
+      <createTable tableName="medical_type_ref">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="medical_type_refPK"/>
+         </column>
+         <column name="label" type="VARCHAR(255)"/>
+         <column name="subtype" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-14">
+      <createTable tableName="notification">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="notificationPK"/>
+         </column>
+         <column name="creation_date" type="timestamp"/>
+         <column name="data" type="VARCHAR(255)"/>
+         <column name="item_id" type="BIGINT"/>
+         <column name="read" type="BOOLEAN"/>
+         <column name="type" type="VARCHAR(255)"/>
+         <column name="emitter_profile_id" type="BIGINT"/>
+         <column name="receiver_profile_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-15">
+      <createTable tableName="profile">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="profilePK"/>
+         </column>
+         <column name="avatar_thumbnail_url" type="VARCHAR(255)"/>
+         <column name="avatar_url" type="VARCHAR(255)"/>
+         <column name="description" type="VARCHAR(1000)"/>
+         <column name="extended_user_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-16">
+      <createTable tableName="publication">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="publicationPK"/>
+         </column>
+         <column name="description" type="VARCHAR(1000)"/>
+         <column name="location" type="VARCHAR(200)"/>
+         <column name="nb_vizualisations" type="INT"/>
+         <column name="processed_description" type="VARCHAR(3000)"/>
+         <column name="publication_date" type="timestamp"/>
+         <column name="visibility" type="VARCHAR(255)"/>
+         <column name="anatomic_zone_ref_id" type="BIGINT"/>
+         <column name="author_profile_id" type="BIGINT"/>
+         <column name="image_id" type="BIGINT"/>
+         <column name="specialty_ref_id" type="BIGINT"/>
+
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-17">
+      <createTable tableName="publication_hashtag">
+         <column name="publications_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="hashtags_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-18">
+      <createTable tableName="reporting">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="reportingPK"/>
+         </column>
+         <column name="reporting_date" type="timestamp"/>
+         <column name="reported_publication_id" type="BIGINT"/>
+         <column name="reporter_profile_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-19">
+      <createTable tableName="rpps_ref">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="rpps_refPK"/>
+         </column>
+         <column name="number" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-20">
+      <createTable tableName="share">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="sharePK"/>
+         </column>
+         <column name="publication_id" type="BIGINT"/>
+         <column name="sharer_profile_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-21">
+      <createTable tableName="situation_ref">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="situation_refPK"/>
+         </column>
+         <column name="code" type="VARCHAR(255)"/>
+         <column name="label" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-22">
+      <createTable tableName="specialty_ref">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="specialty_refPK"/>
+         </column>
+         <column name="label" type="VARCHAR(255)"/>
+         <column name="medical_type_ref_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-23">
+      <createTable tableName="title_ref">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="title_refPK"/>
+         </column>
+         <column name="abbreviation" type="VARCHAR(255)"/>
+         <column name="code" type="VARCHAR(255)"/>
+         <column name="label" type="VARCHAR(255)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-24">
+      <addPrimaryKey columnNames="comments_id, hashtags_id" tableName="comment_hashtag"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-25">
+      <addPrimaryKey columnNames="publications_id, hashtags_id"
+                     tableName="publication_hashtag"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-26">
+      <addForeignKeyConstraint baseColumnNames="sharer_profile_id"
+                               baseTableName="share"
+                               constraintName="FK_1lu48an71r3rkamwpc6hdra8u"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-27">
+      <addForeignKeyConstraint baseColumnNames="reporter_profile_id"
+                               baseTableName="reporting"
+                               constraintName="FK_2ioes35syxn7541efxt8brsrg"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-28">
+      <addForeignKeyConstraint baseColumnNames="situation_ref_id"
+                               baseTableName="extended_user"
+                               constraintName="FK_58vr0gbemuiexdbdkbnk2aij1"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="situation_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-29">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="extended_user"
+                               constraintName="FK_93u6ksurew8iucmx8khgd3jiq"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-30">
+      <addForeignKeyConstraint baseColumnNames="publication_id"
+                               baseTableName="share"
+                               constraintName="FK_9gthi36aj6x20mic3hof7nog4"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="publication"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-31">
+      <addForeignKeyConstraint baseColumnNames="specialty_ref_id"
+                               baseTableName="publication"
+                               constraintName="FK_aiggqiri8uxvfkjmdaw310oev"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="specialty_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-32">
+      <addForeignKeyConstraint baseColumnNames="comments_id"
+                               baseTableName="comment_hashtag"
+                               constraintName="FK_daxgyht3mqmqdivmwu6do0c6i"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="comment"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-33">
+      <addForeignKeyConstraint baseColumnNames="address_id"
+                               baseTableName="extended_user"
+                               constraintName="FK_e2i0jr3sg7ic178bn87q4hkh3"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="address"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-34">
+      <addForeignKeyConstraint baseColumnNames="rpps_ref_id"
+                               baseTableName="extended_user"
+                               constraintName="FK_edgu73jyb1g8pb7mckgt2n67x"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="rpps_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-35">
+      <addForeignKeyConstraint baseColumnNames="medical_type_ref_id"
+                               baseTableName="extended_user"
+                               constraintName="FK_fm184r0nb4jbaq0be9yccx50o"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="medical_type_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-36">
+      <addForeignKeyConstraint baseColumnNames="reported_publication_id"
+                               baseTableName="reporting"
+                               constraintName="FK_g0lv19ob77gts8lln6v1qr45e"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="publication"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-37">
+      <addForeignKeyConstraint baseColumnNames="emitter_profile_id"
+                               baseTableName="notification"
+                               constraintName="FK_hptr2pwls98ei5cylx6nikuvj"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-38">
+      <addForeignKeyConstraint baseColumnNames="follower_id"
+                               baseTableName="follow"
+                               constraintName="FK_i2ewwo9inkvk8vaqrxj5v8f5i"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-39">
+      <addForeignKeyConstraint baseColumnNames="profile_id"
+                               baseTableName="declaration"
+                               constraintName="FK_i5sn2io0qq39iey772401axyr"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-40">
+      <addForeignKeyConstraint baseColumnNames="hashtags_id"
+                               baseTableName="comment_hashtag"
+                               constraintName="FK_lyc2ipg54k9coxprk2nodwthi"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="hashtag"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-41">
+      <addForeignKeyConstraint baseColumnNames="anatomic_zone_ref_id"
+                               baseTableName="publication"
+                               constraintName="FK_m5eyx86lr7h76qcy1wrpwucsb"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="anatomic_zone_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-42">
+      <addForeignKeyConstraint baseColumnNames="declaration_type_ref_id"
+                               baseTableName="declaration"
+                               constraintName="FK_m8etxp96bd349sbwlnp1jd6ti"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="declaration_type_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-43">
+      <addForeignKeyConstraint baseColumnNames="medical_type_ref_id"
+                               baseTableName="specialty_ref"
+                               constraintName="FK_n1oc7piw015rl5354d9mxjld6"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="medical_type_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-44">
+      <addForeignKeyConstraint baseColumnNames="hashtags_id"
+                               baseTableName="publication_hashtag"
+                               constraintName="FK_p8gnjxjr8n2lr1x31vpq0ws5k"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="hashtag"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-45">
+      <addForeignKeyConstraint baseColumnNames="author_profile_id"
+                               baseTableName="publication"
+                               constraintName="FK_pehikniellk6xty5wrfntvjnx"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-46">
+      <addForeignKeyConstraint baseColumnNames="commentator_profile_id"
+                               baseTableName="comment"
+                               constraintName="FK_qhtm20p2j5mwb864400o3lcij"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-47">
+      <addForeignKeyConstraint baseColumnNames="publications_id"
+                               baseTableName="publication_hashtag"
+                               constraintName="FK_qmci79236eyn2io7psre4980s"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="publication"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-48">
+      <addForeignKeyConstraint baseColumnNames="receiver_profile_id"
+                               baseTableName="notification"
+                               constraintName="FK_qq4utbmmb2txp8xd1rgsfwidd"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-49">
+      <addForeignKeyConstraint baseColumnNames="publication_id"
+                               baseTableName="comment"
+                               constraintName="FK_seo5iidl5wobsp75k972amfl2"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="publication"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-50">
+      <addForeignKeyConstraint baseColumnNames="extended_user_id"
+                               baseTableName="profile"
+                               constraintName="FK_sxpbiv4ml46nmvemdyt1t1kia"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="extended_user"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-51">
+      <addForeignKeyConstraint baseColumnNames="title_ref_id"
+                               baseTableName="extended_user"
+                               constraintName="FK_t1l00iyep1ocuw5ikmfpt227l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="title_ref"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-52">
+      <addForeignKeyConstraint baseColumnNames="following_id"
+                               baseTableName="follow"
+                               constraintName="FK_tkjr0k3x569btja89gb5vccck"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-53">
+      <addForeignKeyConstraint baseColumnNames="image_id"
+                               baseTableName="publication"
+                               constraintName="FK_tlj17m1l2efn1378gpqith845"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="image"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-54">
+      <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-55">
+      <dropSequence sequenceName="jhi_user_id_seq"/>
+   </changeSet>
+   <changeSet author="Dahwoud (generated)" id="1458136794089-56">
+      <addNotNullConstraint columnDataType="varchar(100)"
+                            columnName="email"
+                            tableName="jhi_user"/>
+   </changeSet>
+</databaseChangeLog>

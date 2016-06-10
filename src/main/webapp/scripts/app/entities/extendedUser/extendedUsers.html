@@ -1,0 +1,78 @@
+<div>
+    <h2>ExtendedUsers</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="extendedUser.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new ExtendedUser</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>BirthDate</th>
+                    <th>Sex</th>
+                    <th>PracticeLocation</th>
+                    <th>AdeliNumber</th>
+                    <th>medicalTypeRef</th>
+                    <th>rppsRef</th>
+                    <th>user</th>
+                    <th>address</th>
+                    <th>titleRef</th>
+                    <th>situationRef</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="extendedUser in extendedUsers track by extendedUser.id">
+                    <td><a ui-sref="extendedUser.detail({id:extendedUser.id})">{{extendedUser.id}}</a></td>
+                        <td>{{extendedUser.birthDate | date:'mediumDate'}}</td>
+                    <td translate="{{'hipokApp.Sex.' + extendedUser.sex}}">{{extendedUser.sex}}</td>
+                    <td>{{extendedUser.practiceLocation}}</td>
+                    <td>{{extendedUser.adeliNumber}}</td>
+                    <td>
+                        <a ui-sref="medicalTypeRef.detail({id:extendedUser.medicalTypeRefId})">{{extendedUser.medicalTypeRefId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="rppsRef.detail({id:extendedUser.rppsRefId})">{{extendedUser.rppsRefId}}</a>
+                    </td>
+                    <td>
+                        {{extendedUser.userId}}
+                    </td>
+                    <td>
+                        <a ui-sref="address.detail({id:extendedUser.addressId})">{{extendedUser.addressId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="titleRef.detail({id:extendedUser.titleRefId})">{{extendedUser.titleRefLabel}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="situationRef.detail({id:extendedUser.situationRefId})">{{extendedUser.situationRefId}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="extendedUser.detail({id:extendedUser.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="extendedUser.edit({id:extendedUser.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="extendedUser.delete({id:extendedUser.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

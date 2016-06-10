@@ -1,0 +1,76 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAuthEtatLabel">Create or edit a Auth Etat</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.authEtat.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.authEtat.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_idProfile">Id Profile</label>
+            <input type="number" class="form-control" name="idProfile" id="field_idProfile"
+                    ng-model="vm.authEtat.idProfile"
+                    required />
+            <div ng-show="editForm.idProfile.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.idProfile.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.idProfile.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_idImageAuth">Id Image Auth</label>
+            <input type="number" class="form-control" name="idImageAuth" id="field_idImageAuth"
+                    ng-model="vm.authEtat.idImageAuth"
+                    required />
+            <div ng-show="editForm.idImageAuth.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.idImageAuth.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.idImageAuth.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etat">Etat</label>
+            <input type="checkbox" class="form-control" name="etat" id="field_etat"
+                    ng-model="vm.authEtat.etat"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_profile">Profile</label>
+            <select class="form-control" id="field_profile" name="profile" ng-model="vm.authEtat.profileId" ng-options="profile.id as profile.id for profile in vm.profiles | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_imageAuth">Image Auth</label>
+            <select class="form-control" id="field_imageAuth" name="imageAuth" ng-model="vm.authEtat.imageAuthId" ng-options="imageAuth.id as imageAuth.id for imageAuth in vm.imageauths | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "profile",
+            "otherEntityName": "profile",
+            "relationshipType": "one-to-one",
+            "relationshipValidateRules": [],
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "authEtat"
+        },
+        {
+            "relationshipName": "imageAuth",
+            "otherEntityName": "imageAuth",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "authEtat"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idProfile",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idImageAuth",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20160610091647",
+    "dto": "mapstruct",
+    "service": "no",
+    "entityTableName": "auth_etat",
+    "pagination": "no"
+}

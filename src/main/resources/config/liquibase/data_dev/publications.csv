@@ -1,0 +1,8 @@
+"id";"description";"location";"visibility";"image_id";"publication_date";"nb_vizualisations";"author_profile_id";"anatomic_zone_ref_id";"specialty_ref_id"
+1;"My garden!";"My garden";"PUBLIC";1;"2015-12-02 16:00:00";NULL;1;1;2
+2;"My TRex!";"My garden";"PUBLIC";2;"2015-12-01 09:00:00";NULL;2;1;7
+3;"Mon nain de jardin!";"Mon jardin";"PUBLIC";3;"2015-11-04 10:00:00";NULL;3;1;33
+4;"My wife!";"My room";"PRIVATE";4;"2015-12-02 12:00:00";NULL;1;4;8
+5;"My nude TRex!";"My room";"PRIVATE";5;"2015-12-01 09:00:00";NULL;2;1;11
+6;"Ma femme!";"Ma chambre";"PRIVATE";6;"2015-12-02 13:00:00";NULL;3;1;30
+7;"The teeth of my wife!";"Her mouth";"PRIVATE";7;"2015-12-02 13:00:00";NULL;1;1;6
